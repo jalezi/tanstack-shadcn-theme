@@ -1,12 +1,13 @@
 {
   "name": "tanstack-start-example-basic",
   "private": true,
-  "sideEffects": false,
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "lint:check": "biome check",
+    "lint:fix": "biome format --write"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.5",
