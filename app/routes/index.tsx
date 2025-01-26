@@ -1,16 +1,15 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute } from "@tanstack/react-router";
 
-import { Button } from '~/components/ui/button';
-
-export const Route = createFileRoute('/')({
-  component: Home,
+export const Route = createFileRoute("/")({
+	component: Home,
 });
 
 function Home() {
-  return (
-    <div>
-      <h3>Welcome Home!!!</h3>
-      <Button>Dela</Button>
-    </div>
-  );
+	return (
+		<main className=" grid place-items-center">
+			<div className="bg-muted p-4 rounded-md">
+				<h3>Shadcn UI & Next Themes</h3>
+			</div>
+		</main>
+	);
 }
