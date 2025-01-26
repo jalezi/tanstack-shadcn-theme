@@ -34,16 +34,14 @@ export const Route = createRootRoute({
 	}),
 	component: RootComponent,
 	notFoundComponent: () => (
-		<main className="grid place-items-center">
+		<div>
+			<h2 className="text-2xl text-center">404</h2>
 			<div>
-				<h2 className="text-2xl text-center">404</h2>
-				<div>
-					<Button variant="link" asChild>
-						<Link to="/">Home</Link>
-					</Button>
-				</div>
+				<Button variant="link" asChild>
+					<Link to="/">Home</Link>
+				</Button>
 			</div>
-		</main>
+		</div>
 	),
 });
 
@@ -59,7 +57,9 @@ function RootComponent() {
 				<header className="flex items-center justify-end p-2">
 					<ModeToggle />
 				</header>
-				<Outlet />
+				<main>
+					<Outlet />
+				</main>
 			</ThemeProvider>
 		</RootDocument>
 	);
@@ -72,7 +72,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<Meta />
 			</head>
 			<body>
-				{children}
+				<div id="app" className="min-h-[100dvh]">
+					{children}
+				</div>
 				<ScrollRestoration />
 				<TanStackRouterDevtools position="bottom-right" />
 				<Scripts />

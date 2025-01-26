@@ -6,10 +6,8 @@ export const Route = createFileRoute("/")({
 
 function Home() {
 	return (
-		<main className=" grid place-items-center">
-			<div className="bg-muted p-4 rounded-md">
-				<h3>Shadcn UI & Next Themes</h3>
-			</div>
-		</main>
+		<div className="bg-muted p-4">
+			<h3>Shadcn UI & Next Themes</h3>
+		</div>
 	);
 }
