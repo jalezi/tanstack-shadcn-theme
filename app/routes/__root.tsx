@@ -6,6 +6,7 @@ import {
 } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { Meta, Scripts } from '@tanstack/start';
+import { DefaultCatchBoundary } from '~/components/default-catch-boundary';
 
 import { ModeToggle } from '~/components/mode-toggler';
 import { ThemeProvider } from '~/components/theme-provider';
@@ -33,6 +34,13 @@ export const Route = createRootRoute({
     ],
   }),
   component: RootComponent,
+  errorComponent: (props) => {
+    return (
+      <RootDocument>
+        <DefaultCatchBoundary {...props} />
+      </RootDocument>
+    );
+  },
   notFoundComponent: () => (
     <div>
       <h2 className="text-2xl text-center">404</h2>
